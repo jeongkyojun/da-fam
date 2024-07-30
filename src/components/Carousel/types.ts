@@ -5,7 +5,8 @@ export interface CarouselItemsType{
 }
 
 export interface CarouselItemType{
-    name:string;
+    category:string;
+    type:number;
     title:string;
     text:string;
     img:StaticImageData;

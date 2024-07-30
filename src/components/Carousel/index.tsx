@@ -1,7 +1,15 @@
+"use client";
 import Link from "next/link";
 import { CarouselItemsType } from "./types";
 import Image from "next/image";
-import { CarouselDiscriptionStyle, CarouselStyle } from "./style";
+import {
+  CarouselDiscriptionStyle,
+  CarouselStyle,
+  StyledCarouselBtn,
+  StyledCarouselCard,
+  StyledCarouselText,
+  StyledCarouselTitle,
+} from "./style";
 
 const Carousel = ({ items }: CarouselItemsType) => {
   return (
@@ -9,18 +17,22 @@ const Carousel = ({ items }: CarouselItemsType) => {
       <div style={CarouselDiscriptionStyle}>
         {items.map((item, index: number) => {
           return (
-            <div key={item.name}>
+            <StyledCarouselCard key={item.category}>
               <div className="carousel-description">
-                <h2 className="carousel-title">{item.title}</h2>
-                <p>{item.text}</p>
-                <Link href={`/`}>바로가기</Link>
+                <StyledCarouselTitle>{item.title}</StyledCarouselTitle>
+                <StyledCarouselText>{item.text}</StyledCarouselText>
+                <StyledCarouselBtn
+                  href={`/product/` + item.category + "/" + item.type}
+                >
+                  바로가기
+                </StyledCarouselBtn>
               </div>
               {item.img ? (
-                <Image src={item?.img} alt={item.name}></Image>
+                <Image src={item?.img} alt={item.category}></Image>
               ) : (
                 <div></div>
               )}
-            </div>
+            </StyledCarouselCard>
           );
         })}
       </div>

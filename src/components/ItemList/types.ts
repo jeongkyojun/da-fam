@@ -1,4 +1,5 @@
 export interface itemCardType{
+    title: string;
     data:itemType[];
 }
 

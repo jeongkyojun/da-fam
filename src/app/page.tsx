@@ -1,13 +1,16 @@
+"use client";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Carousel from "@/components/Carousel";
 import { CAROUSEL_ITEM } from "../constants/data";
+import { StyledMainPage } from "./styled";
+import ItemList from "@/components/ItemList";
 
 export default function Home() {
   return (
-    <div style={{ height: "5000px" }}>
-      <h1>기본 페이지입니다.</h1>
+    <StyledMainPage>
       <Carousel items={CAROUSEL_ITEM}></Carousel>
-    </div>
+      <ItemList data={[]} title={"이벤트 1"}></ItemList>
+    </StyledMainPage>
   );
 }

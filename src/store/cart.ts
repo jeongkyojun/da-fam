@@ -1,6 +1,6 @@
 import { atom, selector } from "recoil";
 
-const CART_ITEM = "CART_ITEM";
+export const CART_ITEM = "CART_ITEM";
 
 export interface ICartInfo {
   readonly id: number;
@@ -16,12 +16,12 @@ export interface ICartItems {
 }
 
 export interface ICartState {
-  readonly items?: Record<string | number, ICartInfo>;
+  readonly items: Record<string | number, ICartInfo>;
 }
 
 export const cartState = atom<ICartState>({
   key: "cart",
-  default: {},
+  default: {items:{}},
   effects: [
     ({ setSelf, onSet }) => {
       localStorage.getItem(CART_ITEM) && setSelf(JSON.parse(localStorage.getItem(CART_ITEM) as string));
@@ -46,20 +46,20 @@ export const changePrice = (price:number, change:number) =>{
 }
 
 export const addToCart = (cart: ICartState, id: string)=>{
-  const tempCart = {...cart};
+  const tempCart = {...cart.items};
   if(tempCart[id]){
-    return {...tempCart, [id]:{id:id, count: cart[id].count+1}};
+    return {...tempCart, [id]:{id:id, count: cart.items[id].count+1}};
   }else{
     return {...tempCart, [id]:{id:id, count: 1}};
   }
 }
 
 export const removeFromCart = (cart: ICartState, id: string) => {
-  const tempCart = { ...cart }; 
+  const tempCart = { ...cart.items }; 
   if (tempCart[id].count === 1) { 
     delete tempCart[id]; 
     return tempCart; 
   } else {
-    return { ...tempCart, [id]: { id: id, count: cart[id].count - 1 } }; 
+    return { ...tempCart, [id]: { id: id, count: cart.items[id].count - 1 } }; 
   }
 };

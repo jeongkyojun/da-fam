@@ -1,6 +1,5 @@
 export interface mainCategoryType{
-    mainItems: categoryItemType[];
-    subItems: categoryItemType[][];
+    items: { [key:string]:string[]};
 }
 
 export interface categoryItemType{

@@ -1,15 +1,16 @@
 "use client";
 import ItemCard from "./ItemCard";
+import { StyledItemList, StyledItemListTitle } from "./styled";
 import { itemCardType } from "./types";
 
-const ItemList = ({ data }: itemCardType) => {
+const ItemList = ({ data, title }: itemCardType) => {
   return (
-    <div>
-      <h1> 이벤트 종류 </h1>
+    <StyledItemList>
+      <StyledItemListTitle> {title} </StyledItemListTitle>
       {data.map((item, index: number) => {
         return <ItemCard key={"item#" + index}></ItemCard>;
       })}
-    </div>
+    </StyledItemList>
   );
 };
 

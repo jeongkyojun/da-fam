@@ -1,12 +1,13 @@
 "use client";
-
 import { ChangeEvent, useState } from "react";
 import MainCategory from "./MainCategory";
 import SearchBar from "./SearchBar";
-import { altImageStyle, navBodyStyle, navStyle } from "./styled";
+import { navBodyStyle, StyledLogoWrapper, StyledNav } from "./styled";
 import OptionBar from "./OptionBar";
 import Image from "next/image";
-import { CATEGORIES, SUB_CATEGORIES } from "../../constants/data";
+import Logo from "../../assets/icon/Logo.svg";
+import Link from "next/link";
+import { CATEGORY } from "@/constants/category";
 
 const Navbar = () => {
   let mouseOn = false;
@@ -18,28 +19,20 @@ const Navbar = () => {
     console.log(e.target.value);
   };
   return (
-    <div style={navStyle}>
+    <StyledNav>
       <div className="navbar">
         <div className="nav-body" style={navBodyStyle}>
-          <div style={altImageStyle}>logo</div>
-          {/* <Image
-            src={"../../src/assets/icon/cart.svg"}
-            alt={"로고"}
-            width={20}
-            height={20}
-          ></Image> */}
+          <StyledLogoWrapper>
+            <Link href={"/"}>
+              <Image src={Logo} alt={"로고"} width={180} height={90}></Image>
+            </Link>
+          </StyledLogoWrapper>
           <SearchBar onChangeHandler={product_input} />
           <OptionBar />
         </div>
-        <div>
-          <div className="category-btn">category</div>
-        </div>
+        <MainCategory items={CATEGORY}></MainCategory>
       </div>
-      <MainCategory
-        mainItems={CATEGORIES}
-        subItems={SUB_CATEGORIES}
-      ></MainCategory>
-    </div>
+    </StyledNav>
   );
 };
 

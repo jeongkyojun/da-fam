@@ -7,7 +7,7 @@ import { ProductDetailType } from "./types";
 const ProductDetail = ({ item }: ProductDetailType) => {
   const [cart, setCart] = useRecoilState(cartState);
   const [fullPrice, setFullPrice] = useRecoilState(priceState);
-  const { category, description, image, price, rating, title } = item;
+  const { description, image, price, title } = item;
 
   const addItem = () => {
     //setCart(addToCart(cart, item.id));
@@ -98,14 +98,14 @@ const ProductDetail = ({ item }: ProductDetailType) => {
               <span className="badge badge-accent ml-2">NEW</span>
             </h2>
             <p>{description}</p>
-            <div className="flex items-center mt-3">
+            {/* <div className="flex items-center mt-3">
               <div className="rating rating-half" key="rating">
                 {getRaiting(rating.rate)}
               </div>
               <div className="ml-2">
                 {rating.rate} / {rating.count}참여
               </div>
-            </div>
+            </div> */}
             <p className="mt-2 mb-4 text-3xl">${Math.round(price)}</p>
             <div className="card-actions">
               <button className="btn btn-primary" onClick={addItem}>

@@ -1,9 +1,10 @@
-export interface itemCardType{
-    title: string;
-    data:itemType[];
-}
+import { IProduct } from "@/store/products";
+import { MouseEventHandler } from "react";
 
-export interface itemType{
-    id:number;
-    title:string;
+export interface itemListType{
+    row: number;
+    col: number;
+    title: string;
+    data:IProduct[];
+    onClick: MouseEventHandler;
 }

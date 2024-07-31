@@ -10,7 +10,11 @@ const OptionBar = () => {
 
   return (
     <StyledOptionBar width={ICON_SIZE * 3 + 20}>
-      <StyledOptionButton title={"즐겨찾기"} width={ICON_SIZE}>
+      <StyledOptionButton
+        title={"즐겨찾기"}
+        width={ICON_SIZE}
+        href={"/cartPage"}
+      >
         <Image
           src={myLikeIcon}
           alt="즐겨찾기"
@@ -18,11 +22,7 @@ const OptionBar = () => {
           height={ICON_SIZE}
         ></Image>
       </StyledOptionButton>
-      <StyledOptionButton
-        title={"내정보"}
-        width={ICON_SIZE}
-        href={"/product/15"}
-      >
+      <StyledOptionButton title={"내정보"} width={ICON_SIZE} href={"/cartPage"}>
         <Image
           src={myItemIcon}
           alt="내정보"
@@ -30,7 +30,11 @@ const OptionBar = () => {
           height={ICON_SIZE}
         ></Image>
       </StyledOptionButton>
-      <StyledOptionButton title={"장바구니"} width={ICON_SIZE}>
+      <StyledOptionButton
+        title={"장바구니"}
+        width={ICON_SIZE}
+        href={"/cartPage"}
+      >
         <Image
           src={myCartIcon}
           alt="장바구니"

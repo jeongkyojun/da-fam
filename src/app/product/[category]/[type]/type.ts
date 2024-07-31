@@ -3,8 +3,8 @@ export interface PropTypes{
 }
 
 interface ParamType{
-    category?: string;
-    type?: number;
+    category: string;
+    type: number;
 }
 
 

@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { selector,atom } from "recoil";
 
 // 혹시 API통신이 되지 않는다면 /product.json파일을 활용해서 로드하세요.
@@ -11,10 +12,11 @@ export interface IProduct {
   readonly id: number;
   readonly title: string;
   readonly description: string;
-  readonly category: string;
+  readonly type: number;
   readonly price: number;
-  readonly image: string;
-  readonly rating: IRating;
+  readonly image: StaticImageData;
+  readonly discount: number;
+  // readonly rating: IRating;
 }
 
 export const productsListItem = atom<IProduct[]>({

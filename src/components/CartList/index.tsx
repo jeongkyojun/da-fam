@@ -49,7 +49,7 @@ const CartList = ({ product, id }: CartListType): JSX.Element => {
       </a>
       <div className="card-body px-1 lg:px-12">
         <h2 className="card-title">
-          <a className="link link-hover" href={"/product/" + product.id}>
+          <a className="link link-hover" href={"/productDetail/" + product.id}>
             {product.title}
           </a>
         </h2>

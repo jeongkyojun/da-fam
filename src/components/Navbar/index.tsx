@@ -8,9 +8,9 @@ import Image from "next/image";
 import Logo from "../../assets/icon/Logo.svg";
 import Link from "next/link";
 import { CATEGORY } from "@/constants/category";
+import SearchCard from "../NavCard/SearchCard";
 
 const Navbar = () => {
-  let mouseOn = false;
   const category_show = () => {};
   const product_search = () => {
     console.log("search");
@@ -28,6 +28,7 @@ const Navbar = () => {
             </Link>
           </StyledLogoWrapper>
           <SearchBar onChangeHandler={product_input} />
+          <SearchCard items={[]}></SearchCard>
           <OptionBar />
         </div>
         <MainCategory items={CATEGORY}></MainCategory>

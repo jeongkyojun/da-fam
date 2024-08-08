@@ -4,6 +4,7 @@ export const StyledNav = styled.div`
     position: sticky;
     top: 0px;
     backgroundColor: white;
+    z-index: 9998;
 `
 
 export const StyledLogoWrapper = styled.div`
@@ -23,25 +24,6 @@ export const navBodyStyle:Object={
 }
 
 export const navCategoryButtonStyle:Object = {
-}
-
-export const categoryStyle:Object = {
-    visibility: 'hidden',
-    position: 'absolute',
-    display: 'flex',
-    flexDirection: 'row',
-    border: '1px solid green',
-    width: '100%',
-    maxWidth: '1050px',
-    backgroundColor:'gray',
-}
-
-export const categoryItemListStyle:Object={
-    width: '200px',
-    height: '35px',
-    fontSize: '23px',
-    border: '1px solid #BCBCBC',
-    backgroundColor: 'white',
 }
 
 export const cartIconStyle:Object = {

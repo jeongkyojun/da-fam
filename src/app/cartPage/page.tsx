@@ -12,20 +12,20 @@ const CartPage = () => {
 
   const showCartList = () => {
     const base: JSX.Element[] = [];
-    if (!cart) {
-      base.push(
-        <>
-          <h1 className="text-2xl">장바구니에 물품이 없습니다.</h1>
-          <Link href="/" className="btn btn-primary mt-10">
-            담으러 가기
-          </Link>
-        </>
-      );
-    }
-    for (const id in cart) {
-      const product = pList[Number.parseInt(id) - 1];
-      base.push(<CartList product={product} id={id}></CartList>);
-    }
+    // if (!cart) {
+    //   base.push(
+    //     <>
+    //       <h1 className="text-2xl">장바구니에 물품이 없습니다.</h1>
+    //       <Link href="/" className="btn btn-primary mt-10">
+    //         담으러 가기
+    //       </Link>
+    //     </>
+    //   );
+    // }
+    // for (const id in cart) {
+    //   const product = pList[Number.parseInt(id) - 1];
+    //   base.push(<CartList product={product} id={id}></CartList>);
+    // }
     return base;
   };
 

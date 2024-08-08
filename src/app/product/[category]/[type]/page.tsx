@@ -14,7 +14,7 @@ import {
 import { CATEGORY, CATEGORY_TITLE } from "@/constants/category";
 import Link from "next/link";
 import ItemList from "@/components/ItemList";
-import { PRODUCT_ITEMS } from "@/constants/data";
+import { FILTER_PRICE, PRODUCT_ITEMS } from "@/constants/data";
 
 const Product = ({ params }: PropTypes) => {
   const [categoryName, setCategoryName] = useState("물건");
@@ -71,8 +71,8 @@ const Product = ({ params }: PropTypes) => {
             row={2}
             col={4}
             title={CATEGORY[params.category][params.type]}
-            onClick={productListClickHandler}
             data={itemList}
+            category={params.category}
           ></ItemList>
         </StyledProductList>
       </StyledProductBodyWrapper>

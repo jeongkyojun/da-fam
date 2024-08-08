@@ -7,3 +7,7 @@ export interface categoryItemType{
     alt?:string;
     name:string;
 }
+
+export interface CategoryListType{
+    active: boolean;
+}

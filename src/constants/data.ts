@@ -4,11 +4,11 @@ import fishImg from "../../src/assets/img/img_shop_fish.jpeg"
 import { IProduct } from "@/store/products";
 
 // 고기 관련 이미지 링크
-import cowImg from '../../src/assets/img/img_shop_meat.jpeg';
-import porkImg from '../../src/assets/img/img_shop_meat.jpeg';
-import chickenImg from '../../src/assets/img/img_shop_meat.jpeg';
-import otherMeatImg from '../../src/assets/img/img_shop_meat.jpeg';
-import eggImg from '../../src/assets/img/img_shop_meat.jpeg';
+import cowImg from '../../src/assets/icon/cow.svg';
+import porkImg from  '../../src/assets/icon/pig.svg';
+import chickenImg from '../../src/assets/icon/chicken.svg';
+import otherMeatImg from  '../../src/assets/icon/cow.svg'
+import eggImg from  '../../src/assets/icon/egg.svg';
 
 // 야채 관련 이미지 링크
 import vegImg from "../../src/assets/img/img_shop_vegetable.jpeg"
@@ -17,7 +17,7 @@ import herbImg from "../../src/assets/img/img_shop_vegetable.jpeg"
 import otherVegImg from "../../src/assets/img/img_shop_vegetable.jpeg"
 
 // 생선 관련 이미지 링크
-import fshImg from "../../src/assets/img/img_shop_fish.jpeg"
+import fshImg from '../../src/assets/icon/fish.svg';
 import shellImg from "../../src/assets/img/img_shop_fish.jpeg"
 import weedImg from "../../src/assets/img/img_shop_fish.jpeg"
 import canImg from "../../src/assets/img/img_shop_fish.jpeg"
@@ -47,6 +47,14 @@ export const CAROUSEL_ITEM = [
       img: fishImg,
     },
   ];
+
+export const FILTER_PRICE = [
+  {max:5000},
+  {min:5000,max:10000},
+  {min:10000,max:20000},
+  {min:20000,max:30000},
+  {min:30000}
+]
 
 
 export const PRODUCT_ITEMS:{[key:string]:IProduct[]}  = {
@@ -167,7 +175,7 @@ export const PRODUCT_ITEMS:{[key:string]:IProduct[]}  = {
       id: 14,
       title: '국내산 소고기 부채살 구이용 300g',
       description:'소고기는 한우!',
-      type: 2,
+      type: 1,
       price: 22990,
       image:cowImg,
       discount: 26,
@@ -175,7 +183,7 @@ export const PRODUCT_ITEMS:{[key:string]:IProduct[]}  = {
       id: 15,
       title: '양념 소 LA 갈비',
       description:'',
-      type: 2,
+      type: 1,
       price: 34950,
       image: cowImg,
       discount: 0,

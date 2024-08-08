@@ -1,21 +1,57 @@
 import styled from 'styled-components'
+import { CategoryListType } from './types'
 
 
 export const StyledCategory = styled.div`
-    position: relative;
     background-color: #2E9AFE;
     text-align: center;
     color: white;
     height: 28px;
-    overflow: hidden;
+    &:hover{
+    }
 `
 
-export const StyledCategoryItemList = styled.li`
-    position: absolute;
-    top: 28px;
+export const StyledCategoryItemList = styled.div<CategoryListType>`
+    display: flex;
+    flex-direction: row;
+
     width: 100%;
-    height: 300px;
+    height: ${({active})=>(active?300:0)}px;
     fontSize: 23px;
     border: 1px solid #BCBCBC;
-    background-color: white;
+    background-color: #EFEFEF;
+    overflow:hidden;
+    transition: 1000ms all;
+`
+
+export const StyledMainCategory = styled.div`
+    display: inline-block;
+`
+
+export const StyledSubCategory = styled.div`
+    display: inline-block;
+`
+
+export const StyledCardIcon = styled.div`
+    width: 40px;
+    height: 40px;
+    margin-right:5px;
+`
+
+export const StyledListCard = styled.li`
+    list-style-type:none;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    
+    color: black;
+    width: 210px;
+    height: 45px;
+    line-height: 40px;
+    margin-left: 5px;
+
+    &:hover{
+        background-color: #BCBCBC
+    }
+
 `

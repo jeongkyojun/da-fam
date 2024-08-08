@@ -1,7 +1,7 @@
-import { MouseEventHandler } from "react";
 import { IProduct } from "@/store/products";
 
-export interface itemCardType{
+export interface NavCardItemType{
     item:IProduct;
     category: string;
+    count: number;
 }

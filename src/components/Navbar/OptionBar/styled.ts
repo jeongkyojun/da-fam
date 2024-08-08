@@ -8,10 +8,12 @@ export const StyledOptionBar = styled.div<OptionStyleType>`
   display: flex;
   flex-direction: row;
   justify-content: space-around
+  position: relative;
 `
 
 
 export const StyledOptionButton = styled.a<OptionStyleType>`
   width: ${({width})=>width||50}px;
   height: ${({width})=>width||50}px;
+  position: relative;
 `

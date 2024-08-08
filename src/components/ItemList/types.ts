@@ -5,6 +5,6 @@ export interface itemListType{
     row: number;
     col: number;
     title: string;
+    category: string;
     data:IProduct[];
-    onClick: MouseEventHandler;
 }

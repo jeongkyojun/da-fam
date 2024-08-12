@@ -1,6 +1,8 @@
 import { atom, selector } from "recoil";
+import { IProduct } from "./products";
 
 export const CART_ITEM = "CART_ITEM";
+export const LIKE_ITEM = "LIKE_ITEM";
 
 export interface ICartInfo {
   readonly id: number;
@@ -19,6 +21,10 @@ export interface ICartState {
   readonly items: Record<string | number, ICartInfo>;
 }
 
+export interface ILikeState{
+  readonly items: Record<string|number, IProduct[]>;
+}
+
 export const cartState = atom<ICartState>({
   key: "cart",
   default: {items:{}},
@@ -29,6 +35,18 @@ export const cartState = atom<ICartState>({
     },
   ],
 });
+
+export const likeState = atom<ILikeState>({
+  key:"like",
+  default: {items:{}},
+  effects: [
+    ({ setSelf, onSet }) => {
+      localStorage.getItem(LIKE_ITEM) && setSelf(JSON.parse(localStorage.getItem(LIKE_ITEM) as string));
+      onSet((value) => localStorage.setItem(LIKE_ITEM, JSON.stringify(value)));
+    },
+  ],
+});
+
 
 export const priceState = atom<number>({
   key: "price",

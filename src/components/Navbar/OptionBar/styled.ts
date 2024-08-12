@@ -15,5 +15,7 @@ export const StyledOptionBar = styled.div<OptionStyleType>`
 export const StyledOptionButton = styled.a<OptionStyleType>`
   width: ${({width})=>width||50}px;
   height: ${({width})=>width||50}px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `

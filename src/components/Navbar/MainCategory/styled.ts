@@ -26,6 +26,7 @@ export const StyledCategoryItemList = styled.div<CategoryListType>`
 
 export const StyledMainCategory = styled.div`
     display: inline-block;
+    border-right: 1px solid gray;
 `
 
 export const StyledSubCategory = styled.div`

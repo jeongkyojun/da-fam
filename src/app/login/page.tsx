@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledButton,
   StyledInput,
@@ -10,8 +10,22 @@ import {
   StyledSocialButton,
   StyledSocialWrapper,
 } from "./styled";
+import { userState } from "@/store/login";
+import { useRecoilState } from "recoil";
 
 const Login = () => {
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
+  const [user, setUser] = useRecoilState(userState);
+
+  const login = () => {
+    const user = {
+      isLogin: true,
+      userId: 0,
+    };
+
+    setUser(user);
+  };
   return (
     <StyledLoginPage>
       <StyledInputWrapper>
@@ -20,6 +34,10 @@ const Login = () => {
           <StyledInput
             name="id"
             placeholder="아이디를 입력하세요"
+            value={id}
+            onChange={(e) => {
+              setId(e.target.value);
+            }}
           ></StyledInput>
         </StyledInputLabel>
         <StyledInputLabel>
@@ -27,9 +45,16 @@ const Login = () => {
           <StyledInput
             name="pw"
             placeholder="비밀번호를 입력하세요"
+            type="password"
+            value={pw}
+            onChange={(e) => {
+              setPw(e.target.value);
+            }}
           ></StyledInput>
         </StyledInputLabel>
-        <StyledButton primary>로그인</StyledButton>
+        <StyledButton primary onClick={login}>
+          로그인
+        </StyledButton>
         <StyledButton primary={false}>회원가입</StyledButton>
         <StyledSocialWrapper>
           <StyledSocialButton></StyledSocialButton>

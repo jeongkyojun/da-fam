@@ -17,8 +17,12 @@ export interface ICartItems {
   readonly image: string;
 }
 
+export interface ICartUserInfo{
+  readonly items: Record<string| number, ICartInfo[]>;
+}
+
 export interface ICartState {
-  readonly items: Record<string | number, ICartInfo>;
+  readonly items: Record<string | number, ICartUserInfo>;
 }
 
 export interface ILikeState{
@@ -27,7 +31,7 @@ export interface ILikeState{
 
 export const cartState = atom<ICartState>({
   key: "cart",
-  default: {items:{}},
+  default: { items:{}},
   effects: [
     ({ setSelf, onSet }) => {
       localStorage.getItem(CART_ITEM) && setSelf(JSON.parse(localStorage.getItem(CART_ITEM) as string));

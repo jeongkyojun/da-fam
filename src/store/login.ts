@@ -4,8 +4,8 @@ export const LOGIN = 'login'
 export const USER = 'user'
 
 export interface ILogin {
-    id:string;
-    pw:string;
+    isLogin: boolean;
+    userId: number;
 }
 
 export const loginState = atom<boolean>({
@@ -22,8 +22,8 @@ export const loginState = atom<boolean>({
 export const userState = atom<ILogin>({
     key: "user",
     default: {
-        id:'user00',
-        pw:'password',
+        isLogin: false,
+        userId: -1,
     },
     effects: [
         ({ setSelf, onSet }) => {

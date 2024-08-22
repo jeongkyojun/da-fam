@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { CategoryListType } from './types'
+import { blue } from '@/constants/palette'
 
 
 export const StyledCategory = styled.div`
-    background-color: #2E9AFE;
+    background-color: ${blue[500]};
     text-align: center;
     color: white;
     height: 28px;

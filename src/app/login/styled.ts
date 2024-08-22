@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { ButtonStyleType } from "./types"
+import { blue } from "@/constants/palette"
 
 export const StyledLoginPage = styled.div`
     height: 500px;
@@ -34,7 +35,7 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
     margin-left: 10px;
-    background-color: #efefff;
+    background-color: ${blue[200]};
     height: 2rem;
     width: 16rem;
     border-radius: 0.5rem;
@@ -44,7 +45,7 @@ export const StyledInput = styled.input`
 export const StyledButton = styled.div<ButtonStyleType>`
     background-color: ${({primary})=>
         primary?
-        'blue':'gray'
+        blue[400]:'gray'
     };
     width: 18rem;
     height: 2rem;

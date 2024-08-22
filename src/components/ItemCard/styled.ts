@@ -12,7 +12,20 @@ export const StyledItemCard = styled.div`
 export const StyledCardImage = styled.div`
     width: 160px;
     height: 160px;
-    border: 1px solid gray;
+    border: 1px solid gray;    
+`
+
+export const CardImage = styled.img`
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 `
 
 export const StyledTextLine = styled.div`
@@ -45,5 +58,6 @@ export const StyledPriceLine = styled.p`
 `
 
 export const StyledDiscountLine = styled.p`
-    display: inline-block;
+    font-size: 0.8rem;
+    color: #999999;
 `

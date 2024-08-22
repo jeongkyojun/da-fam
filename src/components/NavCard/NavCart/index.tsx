@@ -1,7 +1,7 @@
 import { PropType } from "./types";
 import { StyledNavCart } from "./styled";
 
-const NavCart = ({ active }: PropType) => {
+const NavCart = ({ active,items }: PropType) => {
   return <StyledNavCart active={active}></StyledNavCart>;
 };
 

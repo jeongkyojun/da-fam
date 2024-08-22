@@ -4,9 +4,9 @@ import meatIcon from '../assets/icon/pig.svg'
 import vegIcon from '../assets/icon/pig.svg'
 import fishIcon from '../assets/icon/pig.svg'
 
-import meatImg from "../../src/assets/img/img_shop_meat.jpeg"
-import vegetableImg from "../../src/assets/img/img_shop_vegetable.jpeg"
-import fishImg from "../../src/assets/img/img_shop_fish.jpeg"
+import meatImg from "../assets/img/img_shop_meat.jpeg"
+import vegetableImg from "../assets/img/img_shop_vegetable.jpeg"
+import fishImg from "../assets/img/img_shop_fish.jpeg"
 
 export const CATEGORY:{ [key:string]:string[]} = {
     "none":[],

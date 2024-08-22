@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import {
+  CardImage,
   StyledCardImage,
   StyledDescrpitionLine,
   StyledDiscountLine,
@@ -19,22 +20,27 @@ const ItemCard = ({ item, category }: itemCardType) => {
   const onClick = () => {
     router.push("/productDetail/" + category + "/" + item.id);
   };
+  const buyPrice = Math.round((price * (100 - discount)) / 100);
   return (
     <StyledItemCard onClick={onClick}>
       <StyledCardImage>
-        <Image src={image} alt={title} width={200} height={200}></Image>
+        {/* <CardImage src="../../assets/icon/cow.svg" alt={title}></CardImage> */}
+        <Image src={image} alt={title}></Image>
       </StyledCardImage>
       <StyledTextLine>
         <StyledTitleLine>{title}</StyledTitleLine>
         <StyledPriceLine>
           {discount ? (
-            <StyledDiscountLine style={{ textDecoration: "line-through" }}>
-              {price}
-            </StyledDiscountLine>
+            <div>
+              <StyledDiscountLine>
+                {discount}% &nbsp;
+                <del>{price}원</del>
+              </StyledDiscountLine>
+            </div>
           ) : (
             ""
           )}
-          {(price * (100 - discount)) / 100}￦
+          {buyPrice}원
         </StyledPriceLine>
       </StyledTextLine>
     </StyledItemCard>

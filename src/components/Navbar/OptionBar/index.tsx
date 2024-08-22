@@ -40,7 +40,7 @@ const OptionBar = () => {
         ></Image>
         <NavLike active={likeActive} items={likeItems.items["none"]}></NavLike>
       </StyledOptionButton>
-      <StyledOptionButton title={"내정보"} width={ICON_SIZE}>
+      <StyledOptionButton title={"내정보"} width={ICON_SIZE} href="login">
         <Image
           src={myItemIcon}
           alt="내정보"

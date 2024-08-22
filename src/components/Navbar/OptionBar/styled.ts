@@ -7,7 +7,8 @@ export const StyledOptionBar = styled.div<OptionStyleType>`
   border: 1px solid blue;
   display: flex;
   flex-direction: row;
-  justify-content: space-around
+  justify-content: space-around;
+  align-items: center;
   position: relative;
 `
 

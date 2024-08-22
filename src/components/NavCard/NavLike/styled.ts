@@ -7,6 +7,7 @@ export const StyledNavLogin = styled.div<StyledType>`
     background-color: white;
     border: 1px solid red;
     z-index:9999;
+    margin-top: 10px;
     
     visibility: ${({active})=>active?`visible`:`hidden`};
 `
